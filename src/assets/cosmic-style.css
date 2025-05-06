@@ -1,0 +1,299 @@
+
+/* cosmic-style.css */
+.cosmic-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(
+    45deg,
+    hsl(var(--void-black)),
+    hsl(264, 49%, 12%)
+  );
+  color: hsl(var(--starlight));
+  overflow-x: hidden;
+}
+
+.stellar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(var(--void-black));
+  background-image: 
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  z-index: -1;
+}
+
+.galactic-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.neon-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-shadow: 0 0 15px hsl(var(--cosmic-purple));
+  background: linear-gradient(
+    to right,
+    hsl(var(--cosmic-purple)),
+    hsl(var(--nebula-pink))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.starlight-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: hsl(var(--star-dust) / 0.9);
+  letter-spacing: 0.2rem;
+}
+
+.cosmic-prompt-form {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.nebula-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .nebula-input-container {
+    flex-direction: row;
+  }
+}
+
+.stellar-input {
+  flex: 1;
+  background: hsl(var(--card) / 0.2);
+  border: 2px solid hsl(var(--nebula-pink) / 0.6);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  color: hsl(var(--starlight));
+  font-size: 1.1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stellar-input:focus {
+  border-color: hsl(var(--nebula-pink));
+  box-shadow: 0 0 15px hsl(var(--nebula-pink) / 0.5);
+  outline: none;
+}
+
+.stellar-input::placeholder {
+  color: hsl(var(--starlight) / 0.5);
+}
+
+.quantum-button {
+  background: hsl(var(--cosmic-purple) / 0.8);
+  border: 2px solid hsl(var(--nebula-pink) / 0.8);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: hsl(var(--starlight));
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px hsl(var(--nebula-pink) / 0.5);
+}
+
+.quantum-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: hsl(var(--cosmic-purple));
+  box-shadow: 0 0 25px hsl(var(--nebula-pink) / 0.7);
+}
+
+.quantum-button:active {
+  transform: translateY(1px);
+}
+
+.quantum-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.pulsar-effect {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    hsl(var(--cosmic-purple)),
+    transparent 70%
+  );
+  animation: pulse 2s infinite;
+}
+
+.harmony-visualizer {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: hsl(var(--card) / 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid hsl(var(--border) / 0.3);
+  animation: glow 3s infinite alternate;
+}
+
+.cosmic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.cosmic-stat {
+  background: hsl(var(--card) / 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border) / 0.3);
+  transition: transform 0.3s ease;
+}
+
+.cosmic-stat:hover {
+  transform: translateY(-5px);
+}
+
+.cosmic-stat-label {
+  font-size: 0.9rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cosmic-stat-value {
+  font-size: 1.5rem;
+  color: hsl(var(--starlight));
+  font-weight: 600;
+}
+
+.harmony-level {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.harmony-meter {
+  height: 12px;
+  width: 100%;
+  background: hsl(var(--card) / 0.2);
+  border-radius: 6px;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.harmony-fill {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    hsl(var(--cosmic-blue)),
+    hsl(var(--nebula-pink))
+  );
+  border-radius: 6px;
+  transition: width 1.5s ease-in-out;
+}
+
+.harmony-percentage {
+  font-size: 1.2rem;
+  color: hsl(var(--starlight));
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.relic-card {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--card) / 0.3),
+    hsl(var(--accent) / 0.2)
+  );
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--nebula-pink) / 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.relic-card:hover {
+  border-color: hsl(var(--nebula-pink) / 0.8);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2), 0 0 15px hsl(var(--nebula-pink) / 0.5);
+}
+
+.relic-name {
+  font-size: 1.5rem;
+  color: hsl(var(--starlight));
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    to right,
+    hsl(var(--starlight)),
+    hsl(var(--nebula-pink))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.relic-effect {
+  color: hsl(var(--muted-foreground));
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.relic-cost {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.relic-cost-label {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9rem;
+}
+
+.relic-cost-value {
+  background: hsl(var(--cosmic-purple) / 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  color: hsl(var(--starlight));
+  font-weight: 500;
+}
+
+.cosmic-section-title {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  background: linear-gradient(
+    to right,
+    hsl(var(--starlight)),
+    hsl(var(--nebula-pink))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
